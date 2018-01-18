@@ -22,10 +22,9 @@
 			GUI.enabled = false;
 			script = EditorGUILayout.ObjectField("Script", script, typeof(MonoScript), false) as MonoScript;
 			GUI.enabled = true;
-
 			var texture = serializedObject.FindProperty("_loadingTexture");
 			EditorGUILayout.ObjectField(texture, typeof(Texture2D));
-
+			
 			EditorGUILayout.Space();
 			EditorGUILayout.LabelField("Factories");
 			var facs = serializedObject.FindProperty("Factories");

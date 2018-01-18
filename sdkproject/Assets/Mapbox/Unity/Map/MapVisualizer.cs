@@ -28,7 +28,7 @@ namespace Mapbox.Unity.Map
 	/// Later we'll most likely keep track of map features here as well to allow devs to query for features easier 
 	/// (i.e.query all buildings x meters around any restaurant etc).
 	/// </summary>
-	[CreateAssetMenu(menuName = "Mapbox/MapVisualizer/BasicMapVisualizer")]
+	[CreateAssetMenu(menuName = "Mapbox/MapVisualizer/Listed Map Visualizer")]
 	public class MapVisualizer : AbstractMapVisualizer
 	{
 		protected override void PlaceTile(UnwrappedTileId tileId, UnityTile tile, IMapReadable map)

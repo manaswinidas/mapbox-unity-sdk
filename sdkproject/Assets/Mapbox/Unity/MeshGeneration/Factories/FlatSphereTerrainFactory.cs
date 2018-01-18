@@ -8,7 +8,7 @@
 	using Mapbox.Map;
 
 	[CreateAssetMenu(menuName = "Mapbox/Factories/Terrain Factory - Flat Sphere")]
-	public class FlatSphereTerrainFactory : AbstractTileFactory
+	public class FlatSphereTerrainFactory : TerrainFactoryBase
 	{
 		[SerializeField]
 		private Material _baseMaterial;

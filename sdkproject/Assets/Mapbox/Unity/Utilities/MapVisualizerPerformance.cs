@@ -9,7 +9,7 @@ public class MapVisualizerPerformance : MonoBehaviour
 {
 	private Stopwatch _sw = new Stopwatch();
 	private AbstractMap _map;
-	private AbstractMapVisualizer _mapVisualizer;
+	private MapVisualizerBase _mapVisualizer;
 	public int TestCount = 10;
 	private int _currentTest = 1;
 	[NonSerialized]

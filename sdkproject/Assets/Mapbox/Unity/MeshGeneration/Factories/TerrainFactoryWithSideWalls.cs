@@ -12,7 +12,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 	/// Uses Mapbox Terrain api and creates terrain meshes.
 	/// </summary>
 	[CreateAssetMenu(menuName = "Mapbox/Factories/Terrain Factory - Side Walls")]
-	public class TerrainWithSideWallsFactory : AbstractTileFactory
+	public class TerrainWithSideWallsFactory : TerrainFactoryBase
 	{
 		[SerializeField]
 		private Material _baseMaterial;

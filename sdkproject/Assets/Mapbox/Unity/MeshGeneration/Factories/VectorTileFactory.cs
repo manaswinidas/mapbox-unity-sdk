@@ -22,7 +22,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 	/// pull whole vector data and you can use 'Style Optimized Vector Tile Factory' to pull only the layer you want to use.
 	/// </summary>
 	[CreateAssetMenu(menuName = "Mapbox/Factories/Vector Tile Factory")]
-	public class VectorTileFactory : AbstractTileFactory
+	public class VectorTileFactory : VectorTileFactoryBase
 	{
 		[SerializeField]
 		private string _mapId = "mapbox.mapbox-streets-v7";

@@ -7,18 +7,12 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 	using Mapbox.Unity.MeshGeneration.Data;
 	using Utils;
 	using System;
-
-	public enum MapIdType
-	{
-		Standard,
-		Custom
-	}
-
+	
 	/// <summary>
 	/// Uses Mapbox Terrain api and creates terrain meshes.
 	/// </summary>
 	[CreateAssetMenu(menuName = "Mapbox/Factories/Terrain Factory")]
-	public class TerrainFactory : AbstractTileFactory
+	public class TerrainFactory : TerrainFactoryBase
 	{
 		[SerializeField]
 		private Material _baseMaterial = null;

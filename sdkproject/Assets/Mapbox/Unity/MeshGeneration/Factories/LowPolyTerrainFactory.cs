@@ -12,7 +12,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 	/// Uses Mapbox Terrain api and creates terrain meshes.
 	/// </summary>
 	[CreateAssetMenu(menuName = "Mapbox/Factories/Terrain Factory - Low Poly")]
-	public class LowPolyTerrainFactory : AbstractTileFactory
+	public class LowPolyTerrainFactory : TerrainFactoryBase
 	{
 		[SerializeField]
 		private Material _baseMaterial = null;

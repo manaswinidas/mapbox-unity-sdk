@@ -69,8 +69,8 @@ namespace Mapbox.Unity.Map
 
 		[SerializeField]
 		[NodeEditorElement("MapVisualizer")]
-		public AbstractMapVisualizer _mapVisualizer;
-		public AbstractMapVisualizer MapVisualizer
+		public MapVisualizerBase _mapVisualizer;
+		public MapVisualizerBase MapVisualizer
 		{
 			get
 			{
