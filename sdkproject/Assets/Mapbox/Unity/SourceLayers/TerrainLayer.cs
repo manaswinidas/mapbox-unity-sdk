@@ -158,9 +158,39 @@
 			};
 		}
 
-		public void Update(LayerProperties properties)
+		public void UpdateLayer(LayerProperties properties)
 		{
-			Initialize(properties);
+			_layerProperty = (ElevationLayerProperties)properties;
+			UpdateLayer();
+		}
+
+		public void UpdateLayer()
+		{
+			switch (_layerProperty.elevationLayerType)
+			{
+				case ElevationLayerType.FlatTerrain:
+					_elevationFactory = ScriptableObject.CreateInstance<FlatTerrainFactory>();
+					break;
+				case ElevationLayerType.LowPolygonTerrain:
+					_elevationFactory = ScriptableObject.CreateInstance<LowPolyTerrainFactory>();
+					break;
+				case ElevationLayerType.TerrainWithElevation:
+					if (_layerProperty.sideWallOptions.isActive)
+					{
+						_elevationFactory = ScriptableObject.CreateInstance<TerrainWithSideWallsFactory>();
+					}
+					else
+					{
+						_elevationFactory = ScriptableObject.CreateInstance<TerrainFactory>();
+					}
+					break;
+				case ElevationLayerType.GlobeTerrain:
+					_elevationFactory = ScriptableObject.CreateInstance<FlatSphereTerrainFactory>();
+					break;
+				default:
+					break;
+			}
+			_elevationFactory.SetOptions(_layerProperty);
 		}
 		public AbstractTileFactory Factory
 		{

@@ -14,7 +14,7 @@
 		void SetLayerSource(string source);
 		void Initialize();
 		void Initialize(LayerProperties properties);
-		void Update(LayerProperties properties);
+		void UpdateLayer(LayerProperties properties);
 		void Remove();
 
 	}

@@ -113,10 +113,21 @@
 			};
 		}
 
-		public void Update(LayerProperties properties)
+		public void UpdateLayer(LayerProperties properties)
 		{
-			Initialize(properties);
+			_layerProperty = (ImageryLayerProperties)properties;
+			UpdateLayer();
 		}
+
+		public void UpdateLayer()
+		{
+			if (_layerProperty.sourceType != ImagerySourceType.Custom && _layerProperty.sourceType != ImagerySourceType.None)
+			{
+				_layerProperty.sourceOptions.layerSource = MapboxDefaultImagery.GetParameters(_layerProperty.sourceType);
+			}
+			_imageFactory.SetOptions(_layerProperty);
+		}
+
 		public MapImageFactory Factory
 		{
 			get

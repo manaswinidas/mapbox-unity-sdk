@@ -108,7 +108,7 @@
 			};
 		}
 
-		public void Update(LayerProperties properties)
+		public void UpdateLayer(LayerProperties properties)
 		{
 			Initialize(properties);
 		}
