@@ -62,8 +62,8 @@ namespace Mapbox.Unity.Map
 	}
 	/// <summary>
 	/// Abstract map.
-	/// This is the main monobehavior which controls the map. It controls the visualization of map data. 
-	/// Abstract map encapsulates the image, terrain and vector sources and provides a centralized interface to control the visualization of the map. 
+	/// This is the main monobehavior which controls the map. It controls the visualization of map data.
+	/// Abstract map encapsulates the image, terrain and vector sources and provides a centralized interface to control the visualization of the map.
 	/// </summary>
 	public class AbstractMap : MonoBehaviour, IMap
 	{
@@ -87,7 +87,7 @@ namespace Mapbox.Unity.Map
 			}
 		}
 		/// <summary>
-		/// Options to control the imagery component of the map. 
+		/// Options to control the imagery component of the map.
 		/// </summary>
 		[SerializeField]
 		ImageryLayer _imagery = new ImageryLayer();
@@ -114,8 +114,8 @@ namespace Mapbox.Unity.Map
 		}
 		/// <summary>
 		/// The vector data.
-		/// Options to control the vector data component of the map. 
-		/// Adds a vector source and visualizers to define the rendering behaviour of vector data layers. 
+		/// Options to control the vector data component of the map.
+		/// Adds a vector source and visualizers to define the rendering behaviour of vector data layers.
 		/// </summary>
 		[SerializeField]
 		VectorLayer _vectorData = new VectorLayer();
@@ -188,8 +188,8 @@ namespace Mapbox.Unity.Map
 
 		protected int _initialZoom;
 		/// <summary>
-		/// Gets the initial zoom at which the map was initialized. 
-		/// This parameter is useful in calculating the scale of the tiles and the map. 
+		/// Gets the initial zoom at which the map was initialized.
+		/// This parameter is useful in calculating the scale of the tiles and the map.
 		/// </summary>
 		/// <value>The initial zoom.</value>
 		public int InitialZoom
@@ -233,8 +233,8 @@ namespace Mapbox.Unity.Map
 			}
 		}
 		/// <summary>
-		/// Gets the current zoom value of the map. 
-		/// Use <c>AbsoluteZoom</c> to get the zoom level of the tileset. 
+		/// Gets the current zoom value of the map.
+		/// Use <c>AbsoluteZoom</c> to get the zoom level of the tileset.
 		/// <seealso cref="AbsoluteZoom"/>
 		/// </summary>
 		/// <value>The zoom.</value>
@@ -300,8 +300,8 @@ namespace Mapbox.Unity.Map
 		}
 		/// <summary>
 		/// Sets up map.
-		/// This method uses the mapOptions and layer properties to setup the map to be rendered. 
-		/// Override <c>SetUpMap</c> to write custom behavior to map setup. 
+		/// This method uses the mapOptions and layer properties to setup the map to be rendered.
+		/// Override <c>SetUpMap</c> to write custom behavior to map setup.
 		/// </summary>
 		protected virtual void SetUpMap()
 		{
@@ -332,7 +332,7 @@ namespace Mapbox.Unity.Map
 			if (_options.extentOptions.extentType != MapExtentType.Custom)
 			{
 				ITileProviderOptions tileProviderOptions = _options.extentOptions.GetTileProviderOptions();
-				// Setup tileprovider based on type. 
+				// Setup tileprovider based on type.
 				switch (_options.extentOptions.extentType)
 				{
 					case MapExtentType.CameraBounds:
@@ -431,7 +431,7 @@ namespace Mapbox.Unity.Map
 		}
 		/// <summary>
 		/// Initialize the map using the specified latLon and zoom.
-		/// Map will automatically get initialized in the <c>Start</c> method. 
+		/// Map will automatically get initialized in the <c>Start</c> method.
 		/// Use this method to explicitly initialize the map and disable intialize on <c>Start</c>
 		/// </summary>
 		/// <returns>The initialize.</returns>
@@ -451,9 +451,9 @@ namespace Mapbox.Unity.Map
 		}
 		/// <summary>
 		/// Updates the map.
-		/// Use this method to update the location of the map. 
-		/// Update method should be used when panning, zooming or changing location of the map. 
-		/// This method avoid startup delays that might occur on re-initializing the map. 
+		/// Use this method to update the location of the map.
+		/// Update method should be used when panning, zooming or changing location of the map.
+		/// This method avoid startup delays that might occur on re-initializing the map.
 		/// </summary>
 		/// <param name="latLon">LatitudeLongitude.</param>
 		/// <param name="zoom">Zoom level.</param>
@@ -473,7 +473,7 @@ namespace Mapbox.Unity.Map
 			xDelta = xDelta > 0 ? Mathd.Min(xDelta, Mapbox.Utils.Constants.LatitudeMax) : Mathd.Max(xDelta, -Mapbox.Utils.Constants.LatitudeMax);
 			zDelta = zDelta > 0 ? Mathd.Min(zDelta, Mapbox.Utils.Constants.LongitudeMax) : Mathd.Max(zDelta, -Mapbox.Utils.Constants.LongitudeMax);
 
-			//Set Center in Latitude Longitude and Mercator. 
+			//Set Center in Latitude Longitude and Mercator.
 			SetCenterLatitudeLongitude(new Vector2d(xDelta, zDelta));
 			Options.scalingOptions.scalingStrategy.SetUpScaling(this);
 
@@ -489,7 +489,7 @@ namespace Mapbox.Unity.Map
 		}
 		/// <summary>
 		/// Resets the map.
-		/// Use this method to reset the map to and reset all parameters. 
+		/// Use this method to reset the map to and reset all parameters.
 		/// </summary>
 		public void ResetMap()
 		{
@@ -545,7 +545,7 @@ namespace Mapbox.Unity.Map
 
 		internal Vector3 GeoToWorldPositionXZ(Vector2d latitudeLongitude)
 		{
-			// For quadtree implementation of the map, the map scale needs to be compensated for. 
+			// For quadtree implementation of the map, the map scale needs to be compensated for.
 			var scaleFactor = Mathf.Pow(2, (InitialZoom - AbsoluteZoom));
 			var worldPos = Conversions.GeoToWorldPosition(latitudeLongitude, CenterMercator, WorldRelativeScale * scaleFactor).ToVector3xz();
 			return Root.TransformPoint(worldPos);
@@ -570,7 +570,7 @@ namespace Mapbox.Unity.Map
 
 		}
 		/// <summary>
-		/// Converts a latitude longitude into map space position. 
+		/// Converts a latitude longitude into map space position.
 		/// </summary>
 		/// <returns>Position in map space.</returns>
 		/// <param name="latitudeLongitude">Latitude longitude.</param>
@@ -579,23 +579,24 @@ namespace Mapbox.Unity.Map
 		{
 			var worldPos = GeoToWorldPositionXZ(latitudeLongitude);
 
-			if (queryHeight)
+			if (!queryHeight)
 			{
-				//Query Height.
-				float tileScale = 1f;
-				worldPos.y = QueryElevationAtInternal(latitudeLongitude, out tileScale);
+				return worldPos;
 			}
+			//Query Height.
+			float tileScale = 1f;
+			worldPos.y = QueryElevationAtInternal(latitudeLongitude, out tileScale);
 
 			return worldPos;
 		}
 		/// <summary>
-		/// Converts a position in map space into a laitude longitude. 
+		/// Converts a position in map space into a laitude longitude.
 		/// </summary>
 		/// <returns>Position in Latitude longitude.</returns>
 		/// <param name="realworldPoint">Realworld point.</param>
 		public virtual Vector2d WorldToGeoPosition(Vector3 realworldPoint)
 		{
-			// For quadtree implementation of the map, the map scale needs to be compensated for. 
+			// For quadtree implementation of the map, the map scale needs to be compensated for.
 			var scaleFactor = Mathf.Pow(2, (InitialZoom - AbsoluteZoom));
 
 			return (Root.InverseTransformPoint(realworldPoint)).GetGeoPosition(CenterMercator, WorldRelativeScale * scaleFactor);

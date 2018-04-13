@@ -3,8 +3,8 @@
 	using System;
 	using UnityEngine;
 	using System.Collections.Generic;
-	using Mapbox.Unity.MeshGeneration.Factories;
-	using Mapbox.Unity.Utilities;
+	using MeshGeneration.Factories;
+	using Utilities;
 
 	[Serializable]
 	public class VectorLayer : IVectorDataLayer
@@ -71,7 +71,7 @@
 			}
 		}
 
-		public void AddVectorLayer(VectorSubLayerProperties subLayerProperties)
+		public void AddVectorSubLayer(VectorSubLayerProperties subLayerProperties)
 		{
 			if (_layerProperty.vectorSubLayers == null)
 			{
@@ -80,12 +80,27 @@
 			_layerProperty.vectorSubLayers.Add(subLayerProperties);
 		}
 
-		public void RemoveVectorLayer(int index)
+		public VectorSubLayerProperties GetSubLayerWithId(string subLayerId)
+		{
+			return _layerProperty.vectorSubLayers.Find(t => (t.subLayerId == subLayerId));
+		}
+
+		public void RemoveVectorSubLayer(int index)
 		{
 			if (_layerProperty.vectorSubLayers != null)
 			{
 				_layerProperty.vectorSubLayers.RemoveAt(index);
 			}
+		}
+
+		public void RemoveVectorSubLayer(VectorSubLayerProperties subLayerProperty)
+		{
+			if (_layerProperty.vectorSubLayers == null)
+			{
+				return;
+			}
+			var index = _layerProperty.vectorSubLayers.FindIndex(t => (t == subLayerProperty));
+			_layerProperty.vectorSubLayers.RemoveAt(index);
 		}
 
 		public void Initialize(LayerProperties properties)

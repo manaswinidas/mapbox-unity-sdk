@@ -27,12 +27,6 @@ namespace Mapbox.Unity.Map
 			{
 				_rangeTileProviderOptions = new RangeTileProviderOptions();
 			}
-
-
-			//foreach (var tile in tilesToRequest)
-			//{
-			//	AddTile(tile);
-			//}
 		}
 
 		private void Update()
