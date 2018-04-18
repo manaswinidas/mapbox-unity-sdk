@@ -26,7 +26,8 @@ namespace Mapbox.Unity.Map
 	{
 		public void SetUpScaling(AbstractMap map)
 		{
-			map.SetWorldRelativeScale(Mathf.Cos(Mathf.Deg2Rad * (float)map.CenterLatitudeLongitude.x));
+			var scaleFactor = Mathf.Pow(2, (map.AbsoluteZoom - map.InitialZoom));
+			map.SetWorldRelativeScale(scaleFactor * Mathf.Cos(Mathf.Deg2Rad * (float)map.CenterLatitudeLongitude.x));
 		}
 	}
 
@@ -67,8 +68,23 @@ namespace Mapbox.Unity.Map
 	/// </summary>
 	public class AbstractMap : MonoBehaviour, IMap
 	{
+		/// <summary>
+		/// Setting to trigger map initialization in Unity's Start method.
+		/// if set to false, Initialize method should be called explicitly to initialize the map.
+		/// </summary>
 		[SerializeField]
 		private bool _initializeOnStart = true;
+		public bool InitializeOnStart
+		{
+			get
+			{
+				return _initializeOnStart;
+			}
+			set
+			{
+				_initializeOnStart = value;
+			}
+		}
 		/// <summary>
 		/// The map options.
 		/// Options to control the behaviour of the map like location,extent, scale and placement.
@@ -543,7 +559,7 @@ namespace Mapbox.Unity.Map
 			OnInitialized();
 		}
 
-		internal Vector3 GeoToWorldPositionXZ(Vector2d latitudeLongitude)
+		private Vector3 GeoToWorldPositionXZ(Vector2d latitudeLongitude)
 		{
 			// For quadtree implementation of the map, the map scale needs to be compensated for.
 			var scaleFactor = Mathf.Pow(2, (InitialZoom - AbsoluteZoom));
