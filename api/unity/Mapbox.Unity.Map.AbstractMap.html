@@ -1,0 +1,1710 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class AbstractMap
+   | Mapbox SDK for Unity </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class AbstractMap
+   | Mapbox SDK for Unity ">
+    <meta name="generator" content="docfx 2.14.1.0">
+    
+    <link rel="shortcut icon" href="../../docs/images/favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../docs/images/mapbox-logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <h1 id="Mapbox_Unity_Map_AbstractMap" data-uid="Mapbox.Unity.Map.AbstractMap">Class AbstractMap
+              </h1>
+              <div class="markdown level0 summary"><p>Abstract map.
+This is the main monobehavior which controls the map. It controls the visualization of map data.
+Abstract map encapsulates the image, terrain and vector sources and provides a centralized interface to control the visualization of the map.</p>
+</div>
+              <div class="markdown level0 conceptual"></div>
+              <div class="inheritance">
+                <h5>Inheritance</h5>
+                  <div class="level0"><span class="xref">System.Object</span></div>
+                  <div class="level1"><span class="xref">AbstractMap</span></div>
+              </div>
+              <h6><strong>Namespace</strong>:Mapbox.Unity.Map</h6>
+              <h6><strong>Assembly</strong>:cs.temp.dll.dll</h6>
+              <h5 id="Mapbox_Unity_Map_AbstractMap_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public class AbstractMap : MonoBehaviour, IMap, IMapReadable, IMapWritable, IUnifiedMap</code></pre>
+              </div>
+              <h3 id="fields">Fields
+              </h3>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__centerLatitudeLongitude" data-uid="Mapbox.Unity.Map.AbstractMap._centerLatitudeLongitude">_centerLatitudeLongitude</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected Vector2d _centerLatitudeLongitude</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__centerMercator" data-uid="Mapbox.Unity.Map.AbstractMap._centerMercator">_centerMercator</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected Vector2d _centerMercator</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__fileSource" data-uid="Mapbox.Unity.Map.AbstractMap._fileSource">_fileSource</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected MapboxAccess _fileSource</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.MapboxAccess.html">MapboxAccess</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__initialZoom" data-uid="Mapbox.Unity.Map.AbstractMap._initialZoom">_initialZoom</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected int _initialZoom</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__mapVisualizer" data-uid="Mapbox.Unity.Map.AbstractMap._mapVisualizer">_mapVisualizer</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected AbstractMapVisualizer _mapVisualizer</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.AbstractMapVisualizer.html">AbstractMapVisualizer</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__tileProvider" data-uid="Mapbox.Unity.Map.AbstractMap._tileProvider">_tileProvider</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected AbstractTileProvider _tileProvider</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.AbstractTileProvider.html">AbstractTileProvider</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__unityTileSize" data-uid="Mapbox.Unity.Map.AbstractMap._unityTileSize">_unityTileSize</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected float _unityTileSize</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__worldHeightFixed" data-uid="Mapbox.Unity.Map.AbstractMap._worldHeightFixed">_worldHeightFixed</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected bool _worldHeightFixed</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap__worldRelativeScale" data-uid="Mapbox.Unity.Map.AbstractMap._worldRelativeScale">_worldRelativeScale</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected float _worldRelativeScale</code></pre>
+              </div>
+              <h5 class="fieldValue">Field Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="properties">Properties
+              </h3>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_AbsoluteZoom_" data-uid="Mapbox.Unity.Map.AbstractMap.AbsoluteZoom*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_AbsoluteZoom" data-uid="Mapbox.Unity.Map.AbstractMap.AbsoluteZoom">AbsoluteZoom</h4>
+              <div class="markdown level1 summary"><p>Gets the absolute zoom of the tiles being currently rendered.</p>
+<a class="xref" href="Mapbox.Unity.Map.AbstractMap.html#Mapbox_Unity_Map_AbstractMap_Zoom">Zoom</a>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int AbsoluteZoom { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The absolute zoom.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_AbsoluteZoom">IMapReadable.AbsoluteZoom</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_CenterLatitudeLongitude_" data-uid="Mapbox.Unity.Map.AbstractMap.CenterLatitudeLongitude*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_CenterLatitudeLongitude" data-uid="Mapbox.Unity.Map.AbstractMap.CenterLatitudeLongitude">CenterLatitudeLongitude</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Vector2d CenterLatitudeLongitude { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_CenterLatitudeLongitude">IMapReadable.CenterLatitudeLongitude</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_CenterMercator_" data-uid="Mapbox.Unity.Map.AbstractMap.CenterMercator*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_CenterMercator" data-uid="Mapbox.Unity.Map.AbstractMap.CenterMercator">CenterMercator</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Vector2d CenterMercator { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_CenterMercator">IMapReadable.CenterMercator</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_ImageLayer_" data-uid="Mapbox.Unity.Map.AbstractMap.ImageLayer*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_ImageLayer" data-uid="Mapbox.Unity.Map.AbstractMap.ImageLayer">ImageLayer</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">[NodeEditorElement(&quot;Layers&quot;)]
+public ImageryLayer ImageLayer { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.ImageryLayer.html">ImageryLayer</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_InitializeOnStart_" data-uid="Mapbox.Unity.Map.AbstractMap.InitializeOnStart*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_InitializeOnStart" data-uid="Mapbox.Unity.Map.AbstractMap.InitializeOnStart">InitializeOnStart</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool InitializeOnStart { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_InitialZoom_" data-uid="Mapbox.Unity.Map.AbstractMap.InitialZoom*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_InitialZoom" data-uid="Mapbox.Unity.Map.AbstractMap.InitialZoom">InitialZoom</h4>
+              <div class="markdown level1 summary"><p>Gets the initial zoom at which the map was initialized.
+This parameter is useful in calculating the scale of the tiles and the map.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public int InitialZoom { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><p>The initial zoom.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_InitialZoom">IMapReadable.InitialZoom</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_IsAccessTokenValid_" data-uid="Mapbox.Unity.Map.AbstractMap.IsAccessTokenValid*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_IsAccessTokenValid" data-uid="Mapbox.Unity.Map.AbstractMap.IsAccessTokenValid">IsAccessTokenValid</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public bool IsAccessTokenValid { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_MapVisualizer_" data-uid="Mapbox.Unity.Map.AbstractMap.MapVisualizer*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_MapVisualizer" data-uid="Mapbox.Unity.Map.AbstractMap.MapVisualizer">MapVisualizer</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public AbstractMapVisualizer MapVisualizer { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.AbstractMapVisualizer.html">AbstractMapVisualizer</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Options_" data-uid="Mapbox.Unity.Map.AbstractMap.Options*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Options" data-uid="Mapbox.Unity.Map.AbstractMap.Options">Options</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public MapOptions Options { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.MapOptions.html">MapOptions</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Root_" data-uid="Mapbox.Unity.Map.AbstractMap.Root*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Root" data-uid="Mapbox.Unity.Map.AbstractMap.Root">Root</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Transform Root { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Transform</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_Root">IMapReadable.Root</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Terrain_" data-uid="Mapbox.Unity.Map.AbstractMap.Terrain*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Terrain" data-uid="Mapbox.Unity.Map.AbstractMap.Terrain">Terrain</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">[NodeEditorElement(&quot;Layers&quot;)]
+public TerrainLayer Terrain { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.TerrainLayer.html">TerrainLayer</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_TileProvider_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_TileProvider" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider">TileProvider</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public AbstractTileProvider TileProvider { get; set; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.AbstractTileProvider.html">AbstractTileProvider</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_UnityTileSize_" data-uid="Mapbox.Unity.Map.AbstractMap.UnityTileSize*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_UnityTileSize" data-uid="Mapbox.Unity.Map.AbstractMap.UnityTileSize">UnityTileSize</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public float UnityTileSize { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_UnityTileSize">IMapReadable.UnityTileSize</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_VectorData_" data-uid="Mapbox.Unity.Map.AbstractMap.VectorData*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_VectorData" data-uid="Mapbox.Unity.Map.AbstractMap.VectorData">VectorData</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">[NodeEditorElement(&quot;Layers&quot;)]
+public VectorLayer VectorData { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.VectorLayer.html">VectorLayer</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_WorldRelativeScale_" data-uid="Mapbox.Unity.Map.AbstractMap.WorldRelativeScale*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_WorldRelativeScale" data-uid="Mapbox.Unity.Map.AbstractMap.WorldRelativeScale">WorldRelativeScale</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public float WorldRelativeScale { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_WorldRelativeScale">IMapReadable.WorldRelativeScale</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Zoom_" data-uid="Mapbox.Unity.Map.AbstractMap.Zoom*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Zoom" data-uid="Mapbox.Unity.Map.AbstractMap.Zoom">Zoom</h4>
+              <div class="markdown level1 summary"><p>Gets the current zoom value of the map.
+Use <code>AbsoluteZoom</code> to get the zoom level of the tileset.</p>
+<a class="xref" href="Mapbox.Unity.Map.AbstractMap.html#Mapbox_Unity_Map_AbstractMap_AbsoluteZoom">AbsoluteZoom</a>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public float Zoom { get; }</code></pre>
+              </div>
+              <h5 class="propertyValue">Property Value</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><p>The zoom.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_Zoom">IMapReadable.Zoom</a></div>
+              <h3 id="methods">Methods
+              </h3>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Awake_" data-uid="Mapbox.Unity.Map.AbstractMap.Awake*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Awake" data-uid="Mapbox.Unity.Map.AbstractMap.Awake">Awake()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void Awake()</code></pre>
+              </div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_GeoToWorldPosition_" data-uid="Mapbox.Unity.Map.AbstractMap.GeoToWorldPosition*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_GeoToWorldPosition_Vector2d_System_Boolean_" data-uid="Mapbox.Unity.Map.AbstractMap.GeoToWorldPosition(Vector2d,System.Boolean)">GeoToWorldPosition(Vector2d, Boolean)</h4>
+              <div class="markdown level1 summary"><p>Converts a latitude longitude into map space position.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual Vector3 GeoToWorldPosition(Vector2d latitudeLongitude, bool queryHeight = true)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">latitudeLongitude</span></td>
+                    <td><p>Latitude longitude.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">queryHeight</span></td>
+                    <td><p>If set to <code>true</code> will return the terrain height(in Unity units) at that point.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector3</span></td>
+                    <td><p>Position in map space.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_GeoToWorldPosition_Vector2d_System_Boolean_">IMapReadable.GeoToWorldPosition(Vector2d, Boolean)</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Initialize_" data-uid="Mapbox.Unity.Map.AbstractMap.Initialize*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Initialize_Vector2d_System_Int32_" data-uid="Mapbox.Unity.Map.AbstractMap.Initialize(Vector2d,System.Int32)">Initialize(Vector2d, Int32)</h4>
+              <div class="markdown level1 summary"><p>Initialize the map using the specified latLon and zoom.
+Map will automatically get initialized in the <code>Start</code> method.
+Use this method to explicitly initialize the map and disable intialize on <code>Start</code></p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual void Initialize(Vector2d latLon, int zoom)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">latLon</span></td>
+                    <td><p>Lat lon.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><span class="parametername">zoom</span></td>
+                    <td><p>Zoom.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_InitializeMap_" data-uid="Mapbox.Unity.Map.AbstractMap.InitializeMap*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_InitializeMap_Mapbox_Unity_Map_MapOptions_" data-uid="Mapbox.Unity.Map.AbstractMap.InitializeMap(Mapbox.Unity.Map.MapOptions)">InitializeMap(MapOptions)</h4>
+              <div class="markdown level1 summary"><p>Initializes the map using the mapOptions.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void InitializeMap(MapOptions options)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.MapOptions.html">MapOptions</a></td>
+                    <td><span class="parametername">options</span></td>
+                    <td><p>Options.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_OnDestroy_" data-uid="Mapbox.Unity.Map.AbstractMap.OnDestroy*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_OnDestroy" data-uid="Mapbox.Unity.Map.AbstractMap.OnDestroy">OnDestroy()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void OnDestroy()</code></pre>
+              </div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_QueryElevationAtInternal_" data-uid="Mapbox.Unity.Map.AbstractMap.QueryElevationAtInternal*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_QueryElevationAtInternal_Vector2d_System_Single__" data-uid="Mapbox.Unity.Map.AbstractMap.QueryElevationAtInternal(Vector2d,System.Single@)">QueryElevationAtInternal(Vector2d, out Single)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual float QueryElevationAtInternal(Vector2d latlong, out float tileScale)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">latlong</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><span class="parametername">tileScale</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_QueryElevationInMetersAt_" data-uid="Mapbox.Unity.Map.AbstractMap.QueryElevationInMetersAt*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_QueryElevationInMetersAt_Vector2d_" data-uid="Mapbox.Unity.Map.AbstractMap.QueryElevationInMetersAt(Vector2d)">QueryElevationInMetersAt(Vector2d)</h4>
+              <div class="markdown level1 summary"><p>Queries the real world elevation data in Meters at a given latitude longitude.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual float QueryElevationInMetersAt(Vector2d latlong)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">latlong</span></td>
+                    <td><p>Latlong.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><p>The height data.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_QueryElevationInUnityUnitsAt_" data-uid="Mapbox.Unity.Map.AbstractMap.QueryElevationInUnityUnitsAt*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_QueryElevationInUnityUnitsAt_Vector2d_" data-uid="Mapbox.Unity.Map.AbstractMap.QueryElevationInUnityUnitsAt(Vector2d)">QueryElevationInUnityUnitsAt(Vector2d)</h4>
+              <div class="markdown level1 summary"><p>Queries the real world elevation data in Unity units at a given latitude longitude.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual float QueryElevationInUnityUnitsAt(Vector2d latlong)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">latlong</span></td>
+                    <td><p>Latlong.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><p>The height data.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_ResetMap_" data-uid="Mapbox.Unity.Map.AbstractMap.ResetMap*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_ResetMap" data-uid="Mapbox.Unity.Map.AbstractMap.ResetMap">ResetMap()</h4>
+              <div class="markdown level1 summary"><p>Resets the map.
+Use this method to reset the map to and reset all parameters.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void ResetMap()</code></pre>
+              </div>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IUnifiedMap.html#Mapbox_Unity_Map_IUnifiedMap_ResetMap">IUnifiedMap.ResetMap()</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SendInitialized_" data-uid="Mapbox.Unity.Map.AbstractMap.SendInitialized*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SendInitialized" data-uid="Mapbox.Unity.Map.AbstractMap.SendInitialized">SendInitialized()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected void SendInitialized()</code></pre>
+              </div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetCenterLatitudeLongitude_" data-uid="Mapbox.Unity.Map.AbstractMap.SetCenterLatitudeLongitude*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetCenterLatitudeLongitude_Vector2d_" data-uid="Mapbox.Unity.Map.AbstractMap.SetCenterLatitudeLongitude(Vector2d)">SetCenterLatitudeLongitude(Vector2d)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SetCenterLatitudeLongitude(Vector2d centerLatitudeLongitude)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">centerLatitudeLongitude</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapWritable.html#Mapbox_Unity_Map_IMapWritable_SetCenterLatitudeLongitude_Vector2d_">IMapWritable.SetCenterLatitudeLongitude(Vector2d)</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetCenterMercator_" data-uid="Mapbox.Unity.Map.AbstractMap.SetCenterMercator*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetCenterMercator_Vector2d_" data-uid="Mapbox.Unity.Map.AbstractMap.SetCenterMercator(Vector2d)">SetCenterMercator(Vector2d)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SetCenterMercator(Vector2d centerMercator)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">centerMercator</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapWritable.html#Mapbox_Unity_Map_IMapWritable_SetCenterMercator_Vector2d_">IMapWritable.SetCenterMercator(Vector2d)</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetLoadingTexture_" data-uid="Mapbox.Unity.Map.AbstractMap.SetLoadingTexture*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetLoadingTexture_Texture2D_" data-uid="Mapbox.Unity.Map.AbstractMap.SetLoadingTexture(Texture2D)">SetLoadingTexture(Texture2D)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SetLoadingTexture(Texture2D loadingTexture)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Texture2D</span></td>
+                    <td><span class="parametername">loadingTexture</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetupAccess_" data-uid="Mapbox.Unity.Map.AbstractMap.SetupAccess*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetupAccess" data-uid="Mapbox.Unity.Map.AbstractMap.SetupAccess">SetupAccess()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected IEnumerator SetupAccess()</code></pre>
+              </div>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Collections.IEnumerator</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetUpMap_" data-uid="Mapbox.Unity.Map.AbstractMap.SetUpMap*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetUpMap" data-uid="Mapbox.Unity.Map.AbstractMap.SetUpMap">SetUpMap()</h4>
+              <div class="markdown level1 summary"><p>Sets up map.
+This method uses the mapOptions and layer properties to setup the map to be rendered.
+Override <code>SetUpMap</code> to write custom behavior to map setup.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void SetUpMap()</code></pre>
+              </div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetWorldRelativeScale_" data-uid="Mapbox.Unity.Map.AbstractMap.SetWorldRelativeScale*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetWorldRelativeScale_System_Single_" data-uid="Mapbox.Unity.Map.AbstractMap.SetWorldRelativeScale(System.Single)">SetWorldRelativeScale(Single)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SetWorldRelativeScale(float scale)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><span class="parametername">scale</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapWritable.html#Mapbox_Unity_Map_IMapWritable_SetWorldRelativeScale_System_Single_">IMapWritable.SetWorldRelativeScale(Single)</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SetZoom_" data-uid="Mapbox.Unity.Map.AbstractMap.SetZoom*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SetZoom_System_Single_" data-uid="Mapbox.Unity.Map.AbstractMap.SetZoom(System.Single)">SetZoom(Single)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SetZoom(float zoom)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><span class="parametername">zoom</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapWritable.html#Mapbox_Unity_Map_IMapWritable_SetZoom_System_Single_">IMapWritable.SetZoom(Single)</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabAtGeoLocation_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabAtGeoLocation*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabAtGeoLocation_GameObject_Vector2d_System_Action_System_Collections_Generic_List_GameObject___System_Boolean_System_String_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabAtGeoLocation(GameObject,Vector2d,System.Action{System.Collections.Generic.List{GameObject}},System.Boolean,System.String)">SpawnPrefabAtGeoLocation(GameObject, Vector2d, Action&lt;List&lt;GameObject&gt;&gt;, Boolean, String)</h4>
+              <div class="markdown level1 summary"><p>Places a prefab at the specified LatLon on the Map.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SpawnPrefabAtGeoLocation(GameObject prefab, Vector2d LatLon, Action&lt;List&lt;GameObject&gt;&gt; callback = null, bool scaleDownWithWorld = true, string locationItemName = &quot;New Location&quot;)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">GameObject</span></td>
+                    <td><span class="parametername">prefab</span></td>
+                    <td><p>A Game Object Prefab.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">LatLon</span></td>
+                    <td><p>A Vector2d(Latitude Longitude) object</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">GameObject</span>&gt;&gt;</td>
+                    <td><span class="parametername">callback</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">scaleDownWithWorld</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">locationItemName</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabAtGeoLocation_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabAtGeoLocation*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabAtGeoLocation_GameObject_Vector2d___System_Action_System_Collections_Generic_List_GameObject___System_Boolean_System_String_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabAtGeoLocation(GameObject,Vector2d[],System.Action{System.Collections.Generic.List{GameObject}},System.Boolean,System.String)">SpawnPrefabAtGeoLocation(GameObject, Vector2d[], Action&lt;List&lt;GameObject&gt;&gt;, Boolean, String)</h4>
+              <div class="markdown level1 summary"><p>Places a prefab at all locations specified by the LatLon array.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SpawnPrefabAtGeoLocation(GameObject prefab, Vector2d[] LatLon, Action&lt;List&lt;GameObject&gt;&gt; callback = null, bool scaleDownWithWorld = true, string locationItemName = &quot;New Location&quot;)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">GameObject</span></td>
+                    <td><span class="parametername">prefab</span></td>
+                    <td><p>A Game Object Prefab.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">Vector2d</span>[]</td>
+                    <td><span class="parametername">LatLon</span></td>
+                    <td><p>A Vector2d(Latitude Longitude) object</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">GameObject</span>&gt;&gt;</td>
+                    <td><span class="parametername">callback</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">scaleDownWithWorld</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">locationItemName</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabByCategory_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabByCategory*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabByCategory_GameObject_Mapbox_Unity_Map_LocationPrefabCategories_System_Int32_System_Action_System_Collections_Generic_List_GameObject___System_Boolean_System_String_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabByCategory(GameObject,Mapbox.Unity.Map.LocationPrefabCategories,System.Int32,System.Action{System.Collections.Generic.List{GameObject}},System.Boolean,System.String)">SpawnPrefabByCategory(GameObject, LocationPrefabCategories, Int32, Action&lt;List&lt;GameObject&gt;&gt;, Boolean, String)</h4>
+              <div class="markdown level1 summary"><p>Places the prefab for supplied categories.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SpawnPrefabByCategory(GameObject prefab, LocationPrefabCategories categories = LocationPrefabCategories.AnyCategory, int density = 30, Action&lt;List&lt;GameObject&gt;&gt; callback = null, bool scaleDownWithWorld = true, string locationItemName = &quot;New Location&quot;)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">GameObject</span></td>
+                    <td><span class="parametername">prefab</span></td>
+                    <td><p>GameObject Prefab</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="Mapbox.Unity.Map.LocationPrefabCategories.html">LocationPrefabCategories</a></td>
+                    <td><span class="parametername">categories</span></td>
+                    <td><p><a class="xref" href="Mapbox.Unity.Map.LocationPrefabCategories.html">LocationPrefabCategories</a> For more than one category separate them by pipe 
+    (eg: LocationPrefabCategories.Food | LocationPrefabCategories.Nightlife)</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><span class="parametername">density</span></td>
+                    <td><p>Density controls the number of POIs on the map.(Integer value between 1 and 30)</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">GameObject</span>&gt;&gt;</td>
+                    <td><span class="parametername">callback</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">scaleDownWithWorld</span></td>
+                    <td><p>Should the prefab scale up/down along with the map game object?</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">locationItemName</span></td>
+                    <td><p>Name of this location prefab item for future reference</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabByName_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabByName*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_SpawnPrefabByName_GameObject_System_String_System_Int32_System_Action_System_Collections_Generic_List_GameObject___System_Boolean_System_String_" data-uid="Mapbox.Unity.Map.AbstractMap.SpawnPrefabByName(GameObject,System.String,System.Int32,System.Action{System.Collections.Generic.List{GameObject}},System.Boolean,System.String)">SpawnPrefabByName(GameObject, String, Int32, Action&lt;List&lt;GameObject&gt;&gt;, Boolean, String)</h4>
+              <div class="markdown level1 summary"><p>Places the prefab at POI locations if its name contains the supplied string</p>
+<param name="prefab">GameObject Prefab
+<param name="nameString">This is the string that will be checked against the POI name to see if is contained in it, and ony those POIs will be spawned
+<param name="density">Density (Integer value between 1 and 30)
+<param name="locationItemName">Name of this location prefab item for future reference
+<param name="scaleDownWithWorld">Should the prefab scale up/down along with the map game object?
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void SpawnPrefabByName(GameObject prefab, string nameString, int density = 30, Action&lt;List&lt;GameObject&gt;&gt; callback = null, bool scaleDownWithWorld = true, string locationItemName = &quot;New Location&quot;)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">GameObject</span></td>
+                    <td><span class="parametername">prefab</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">nameString</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int32</span></td>
+                    <td><span class="parametername">density</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Action</span>&lt;<span class="xref">System.Collections.Generic.List</span>&lt;<span class="xref">GameObject</span>&gt;&gt;</td>
+                    <td><span class="parametername">callback</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><span class="parametername">scaleDownWithWorld</span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><span class="parametername">locationItemName</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_Start_" data-uid="Mapbox.Unity.Map.AbstractMap.Start*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_Start" data-uid="Mapbox.Unity.Map.AbstractMap.Start">Start()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void Start()</code></pre>
+              </div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_TileProvider_OnTileAdded_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider_OnTileAdded*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_TileProvider_OnTileAdded_UnwrappedTileId_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider_OnTileAdded(UnwrappedTileId)">TileProvider_OnTileAdded(UnwrappedTileId)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void TileProvider_OnTileAdded(UnwrappedTileId tileId)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">UnwrappedTileId</span></td>
+                    <td><span class="parametername">tileId</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_TileProvider_OnTileRemoved_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider_OnTileRemoved*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_TileProvider_OnTileRemoved_UnwrappedTileId_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider_OnTileRemoved(UnwrappedTileId)">TileProvider_OnTileRemoved(UnwrappedTileId)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void TileProvider_OnTileRemoved(UnwrappedTileId tileId)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">UnwrappedTileId</span></td>
+                    <td><span class="parametername">tileId</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_TileProvider_OnTileRepositioned_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider_OnTileRepositioned*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_TileProvider_OnTileRepositioned_UnwrappedTileId_" data-uid="Mapbox.Unity.Map.AbstractMap.TileProvider_OnTileRepositioned(UnwrappedTileId)">TileProvider_OnTileRepositioned(UnwrappedTileId)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void TileProvider_OnTileRepositioned(UnwrappedTileId tileId)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">UnwrappedTileId</span></td>
+                    <td><span class="parametername">tileId</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_UpdateMap_" data-uid="Mapbox.Unity.Map.AbstractMap.UpdateMap*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_UpdateMap_Vector2d_System_Single_" data-uid="Mapbox.Unity.Map.AbstractMap.UpdateMap(Vector2d,System.Single)">UpdateMap(Vector2d, Single)</h4>
+              <div class="markdown level1 summary"><p>Updates the map.
+Use this method to update the location of the map.
+Update method should be used when panning, zooming or changing location of the map.
+This method avoid startup delays that might occur on re-initializing the map.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual void UpdateMap(Vector2d latLon, float zoom)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><span class="parametername">latLon</span></td>
+                    <td><p>LatitudeLongitude.</p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Single</span></td>
+                    <td><span class="parametername">zoom</span></td>
+                    <td><p>Zoom level.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IUnifiedMap.html#Mapbox_Unity_Map_IUnifiedMap_UpdateMap_Vector2d_System_Single_">IUnifiedMap.UpdateMap(Vector2d, Single)</a></div>
+              
+              
+              <a id="Mapbox_Unity_Map_AbstractMap_WorldToGeoPosition_" data-uid="Mapbox.Unity.Map.AbstractMap.WorldToGeoPosition*"></a>
+              <h4 id="Mapbox_Unity_Map_AbstractMap_WorldToGeoPosition_Vector3_" data-uid="Mapbox.Unity.Map.AbstractMap.WorldToGeoPosition(Vector3)">WorldToGeoPosition(Vector3)</h4>
+              <div class="markdown level1 summary"><p>Converts a position in map space into a laitude longitude.</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public virtual Vector2d WorldToGeoPosition(Vector3 realworldPoint)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector3</span></td>
+                    <td><span class="parametername">realworldPoint</span></td>
+                    <td><p>Realworld point.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">Vector2d</span></td>
+                    <td><p>Position in Latitude longitude.</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_WorldToGeoPosition_Vector3_">IMapReadable.WorldToGeoPosition(Vector3)</a></div>
+              <h3 id="events">Events
+              </h3>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap_OnInitialized" data-uid="Mapbox.Unity.Map.AbstractMap.OnInitialized">OnInitialized</h4>
+              <div class="markdown level1 summary"><p>Event delegate, gets called after map is initialized</p>
+<a class="xref" href="Mapbox.Unity.Map.AbstractMap.html#Mapbox_Unity_Map_AbstractMap_OnUpdated">OnUpdated</a>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public event Action OnInitialized</code></pre>
+              </div>
+              <h5 class="eventType">Event Type</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Action</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="Mapbox.Unity.Map.IMapReadable.html#Mapbox_Unity_Map_IMapReadable_OnInitialized">IMapReadable.OnInitialized</a></div>
+              
+              
+              <h4 id="Mapbox_Unity_Map_AbstractMap_OnUpdated" data-uid="Mapbox.Unity.Map.AbstractMap.OnUpdated">OnUpdated</h4>
+              <div class="markdown level1 summary"><p>Event delegate, gets called after map is updated.
+<code>UpdateMap</code> will trigger this event.</p>
+<a class="xref" href="Mapbox.Unity.Map.AbstractMap.html#Mapbox_Unity_Map_AbstractMap_OnInitialized">OnInitialized</a>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public event Action OnUpdated</code></pre>
+              </div>
+              <h5 class="eventType">Event Type</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Action</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+                        </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            &#0169; 2017 Mapbox
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
