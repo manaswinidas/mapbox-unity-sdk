@@ -8,7 +8,7 @@
 - TrafficAndDirections - example built around using Mapbox's traffic data layer and directions API
 - Fixes the issue with Replacement Modifier to prevent duplicate prefab spawning and blocking wrong features.
 - Fixes the issue with custom styles that go missing after building to a device.
-
+- Fix an issue with factories where a racing condition causing tiles without imagery
 
 ### v.1.4.3
 *06/18/2018*
