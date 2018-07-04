@@ -7,6 +7,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 	using Mapbox.Unity.MeshGeneration.Data;
 	using Mapbox.Unity.Utilities;
 	using Mapbox.Unity.Map;
+	using System.Collections.Generic;
 
 	public enum MapImageType
 	{
@@ -93,9 +94,25 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 				return;
 			}
 
-			tile.RasterDataState = TilePropertyState.Loading;
-			Progress++;
-			DataFetcher.FetchImage(tile.CanonicalTileId, MapId, tile, _properties.rasterOptions.useRetina);
+			_registeredTiles.Enqueue(tile);
+
+			//tile.RasterDataState = TilePropertyState.Loading;
+			//Progress++;
+			//DataFetcher.FetchImage(tile.CanonicalTileId, MapId, tile, _properties.rasterOptions.useRetina);
+		}
+
+		public override void MapUpdate()
+		{
+			if (_registeredTiles.Count > 0 && Progress < 10)
+			{
+				for (int i = 0; i < Math.Min(_registeredTiles.Count, 5); i++)
+				{
+					var tile = _registeredTiles.Dequeue();
+					tile.RasterDataState = TilePropertyState.Loading;
+					Progress++;
+					DataFetcher.FetchImage(tile.CanonicalTileId, MapId, tile, _properties.rasterOptions.useRetina);
+				}
+			}
 		}
 
 		/// <summary>

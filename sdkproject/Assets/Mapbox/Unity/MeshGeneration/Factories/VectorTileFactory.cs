@@ -115,9 +115,24 @@
 			}
 			else
 			{
-				tile.VectorDataState = TilePropertyState.Loading;
-				Progress++;
-				DataFetcher.FetchVector(tile.CanonicalTileId, MapId, tile, _properties.useOptimizedStyle, _properties.optimizedStyle);
+				_registeredTiles.Enqueue(tile);
+				//tile.VectorDataState = TilePropertyState.Loading;
+				//Progress++;
+				//DataFetcher.FetchVector(tile.CanonicalTileId, MapId, tile, _properties.useOptimizedStyle, _properties.optimizedStyle);
+			}
+		}
+
+		public override void MapUpdate()
+		{
+			if(_registeredTiles.Count > 0 && Progress < 10)
+			{
+				for (int i = 0; i < Math.Min(_registeredTiles.Count, 5) ; i++)
+				{
+					var tile = _registeredTiles.Dequeue();
+					tile.VectorDataState = TilePropertyState.Loading;
+					Progress++;
+					DataFetcher.FetchVector(tile.CanonicalTileId, MapId, tile, _properties.useOptimizedStyle, _properties.optimizedStyle);
+				}
 			}
 		}
 

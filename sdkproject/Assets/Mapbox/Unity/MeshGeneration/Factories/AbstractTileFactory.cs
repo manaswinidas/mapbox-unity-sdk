@@ -6,6 +6,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 	using UnityEngine;
 	using Mapbox.Unity.Map;
 	using Mapbox.Map;
+	using System.Collections.Generic;
 
 	/// <summary>
 	/// Factories
@@ -43,6 +44,8 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 				return _options;
 			}
 		}
+
+		protected Queue<UnityTile> _registeredTiles;
 
 		private int _progress;
 		protected int Progress
@@ -93,7 +96,13 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 			_progress = 0;
 			_fileSource = fileSource;
 			State = ModuleState.Initialized;
+			_registeredTiles = new Queue<UnityTile>();
 			OnInitialized();
+		}
+
+		public virtual void MapUpdate()
+		{
+
 		}
 
 		public virtual void Register(UnityTile tile)

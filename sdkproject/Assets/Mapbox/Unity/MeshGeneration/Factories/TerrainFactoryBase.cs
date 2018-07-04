@@ -7,6 +7,7 @@ using Mapbox.Map;
 using Mapbox.Unity.MeshGeneration.Enums;
 using Mapbox.Unity.MeshGeneration.Factories.TerrainStrategies;
 using System;
+using System.Collections.Generic;
 
 namespace Mapbox.Unity.MeshGeneration.Factories
 {
@@ -16,6 +17,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		[SerializeField]
 		protected ElevationLayerProperties _elevationOptions = new ElevationLayerProperties();
 		protected TerrainDataFetcher DataFetcher;
+			
 
 		#region UnityMethods
 		private void OnDestroy()
@@ -44,18 +46,41 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 
 		protected override void OnRegistered(UnityTile tile)
 		{
-			Progress++;
-			if (Strategy is IElevationBasedTerrainStrategy)
-			{
-				tile.HeightDataState = TilePropertyState.Loading;
-				DataFetcher.FetchTerrain(tile.CanonicalTileId, _elevationOptions.sourceOptions.Id, tile);
-			}
-			else
-			{
-				Strategy.RegisterTile(tile);
-				Progress--;
-			}
+			_registeredTiles.Enqueue(tile);
+			//Progress++;
+			//if (Strategy is IElevationBasedTerrainStrategy)
+			//{
+			//	tile.HeightDataState = TilePropertyState.Loading;
+			//	DataFetcher.FetchTerrain(tile.CanonicalTileId, _elevationOptions.sourceOptions.Id, tile);
+			//}
+			//else
+			//{
+			//	Strategy.RegisterTile(tile);
+			//	Progress--;
+			//}
 
+		}
+
+		public override void MapUpdate()
+		{
+			if (_registeredTiles.Count > 0 && Progress < 10)
+			{
+				for (int i = 0; i < Math.Min(_registeredTiles.Count, 5); i++)
+				{
+					var tile = _registeredTiles.Dequeue();
+					Progress++;
+					if (Strategy is IElevationBasedTerrainStrategy)
+					{
+						tile.HeightDataState = TilePropertyState.Loading;
+						DataFetcher.FetchTerrain(tile.CanonicalTileId, _elevationOptions.sourceOptions.Id, tile);
+					}
+					else
+					{
+						Strategy.RegisterTile(tile);
+						Progress--;
+					}
+				}
+			}
 		}
 
 		protected override void OnUnregistered(UnityTile tile)
