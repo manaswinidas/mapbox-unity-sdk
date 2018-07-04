@@ -54,7 +54,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		{
 			if (tile != null)
 			{
-				Progress--;
+				_tilesWaitingResponse.Remove(tile);
 				tile.SetRasterData(rasterTile.Data, _properties.rasterOptions.useMipMap, _properties.rasterOptions.useCompression);
 				tile.RasterDataState = TilePropertyState.Loaded;
 			}
@@ -65,7 +65,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		{
 			if (tile != null)
 			{
-				Progress--;
+				_tilesWaitingResponse.Remove(tile);
 				tile.RasterDataState = TilePropertyState.Error;
 				OnErrorOccurred(e);
 			}
@@ -89,27 +89,21 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		{
 			if (_properties.sourceType == ImagerySourceType.None)
 			{
-				Progress++;
-				Progress--;
 				return;
 			}
 
-			_registeredTiles.Enqueue(tile);
-
-			//tile.RasterDataState = TilePropertyState.Loading;
-			//Progress++;
-			//DataFetcher.FetchImage(tile.CanonicalTileId, MapId, tile, _properties.rasterOptions.useRetina);
+			_tilesToFetch.Enqueue(tile);
 		}
 
-		public override void MapUpdate()
+		protected override void OnMapUpdate()
 		{
-			if (_registeredTiles.Count > 0 && Progress < 10)
+			if (_tilesToFetch.Count > 0 && _tilesWaitingResponse.Count < 10)
 			{
-				for (int i = 0; i < Math.Min(_registeredTiles.Count, 5); i++)
+				for (int i = 0; i < Math.Min(_tilesToFetch.Count, 5); i++)
 				{
-					var tile = _registeredTiles.Dequeue();
+					var tile = _tilesToFetch.Dequeue();
 					tile.RasterDataState = TilePropertyState.Loading;
-					Progress++;
+					_tilesWaitingResponse.Add(tile);
 					DataFetcher.FetchImage(tile.CanonicalTileId, MapId, tile, _properties.rasterOptions.useRetina);
 				}
 			}

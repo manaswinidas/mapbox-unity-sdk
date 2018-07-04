@@ -224,17 +224,16 @@ namespace Mapbox.Unity.MeshGeneration.Interfaces
 			return containingCategories;
 		}
 
-		public override void Create(VectorTileLayer layer, UnityTile tile, Action callback)
+		public override void Create(VectorTileLayer layer, UnityTile tile, Action<UnityTile> callback)
 		{
 			//for layers using specific locations, ignore VectorTileLayer and
 			//pass coordinates to the modifierstack using BuildFeatureFromLatLon.
-			if( (SubLayerProperties as PrefabItemOptions).findByType 
-			   == LocationPrefabFindBy.AddressOrLatLon)
+			if( (SubLayerProperties as PrefabItemOptions).findByType == LocationPrefabFindBy.AddressOrLatLon)
 			{
 				BuildFeatureFromLatLon(layer, tile);
 				if (callback != null)
 				{
-					callback();
+					callback(tile);
 				}
 			}
 			else

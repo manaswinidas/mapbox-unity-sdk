@@ -18,7 +18,6 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		protected ElevationLayerProperties _elevationOptions = new ElevationLayerProperties();
 		protected TerrainDataFetcher DataFetcher;
 			
-
 		#region UnityMethods
 		private void OnDestroy()
 		{
@@ -46,38 +45,25 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 
 		protected override void OnRegistered(UnityTile tile)
 		{
-			_registeredTiles.Enqueue(tile);
-			//Progress++;
-			//if (Strategy is IElevationBasedTerrainStrategy)
-			//{
-			//	tile.HeightDataState = TilePropertyState.Loading;
-			//	DataFetcher.FetchTerrain(tile.CanonicalTileId, _elevationOptions.sourceOptions.Id, tile);
-			//}
-			//else
-			//{
-			//	Strategy.RegisterTile(tile);
-			//	Progress--;
-			//}
-
+			_tilesToFetch.Enqueue(tile);
 		}
 
-		public override void MapUpdate()
+		protected override void OnMapUpdate()
 		{
-			if (_registeredTiles.Count > 0 && Progress < 10)
+			if (_tilesToFetch.Count > 0 && _tilesWaitingResponse.Count < 10)
 			{
-				for (int i = 0; i < Math.Min(_registeredTiles.Count, 5); i++)
+				for (int i = 0; i < Math.Min(_tilesToFetch.Count, 5); i++)
 				{
-					var tile = _registeredTiles.Dequeue();
-					Progress++;
+					var tile = _tilesToFetch.Dequeue();
 					if (Strategy is IElevationBasedTerrainStrategy)
 					{
 						tile.HeightDataState = TilePropertyState.Loading;
+						_tilesWaitingResponse.Add(tile);
 						DataFetcher.FetchTerrain(tile.CanonicalTileId, _elevationOptions.sourceOptions.Id, tile);
 					}
 					else
 					{
 						Strategy.RegisterTile(tile);
-						Progress--;
 					}
 				}
 			}
@@ -85,7 +71,6 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 
 		protected override void OnUnregistered(UnityTile tile)
 		{
-			Progress--;
 			Strategy.UnregisterTile(tile);
 		}
 		#endregion
@@ -95,7 +80,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		{
 			if (tile != null)
 			{
-				Progress--;
+				_tilesWaitingResponse.Remove(tile);
 				tile.SetHeightData(pngRasterTile.Data, _elevationOptions.requiredOptions.exaggerationFactor, _elevationOptions.modificationOptions.useRelativeHeight);
 				Strategy.RegisterTile(tile);
 			}
@@ -105,7 +90,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		{
 			if (tile != null)
 			{
-				Progress--;
+				_tilesWaitingResponse.Remove(tile);
 				tile.HeightDataState = TilePropertyState.Error;
 				//strategy might want to act on this , i.e. flattening tile mesh on data fetching failed?
 				Strategy.DataErrorOccurred(tile, e);

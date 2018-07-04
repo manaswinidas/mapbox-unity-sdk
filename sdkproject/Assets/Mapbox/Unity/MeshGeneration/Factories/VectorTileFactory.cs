@@ -43,12 +43,15 @@
 		}
 		protected VectorDataFetcher DataFetcher;
 
+		private Dictionary<UnityTile, int> _layerProgress;
+
 		#region AbstractFactoryOverrides
 		/// <summary>
 		/// Set up sublayers using VectorLayerVisualizers.
 		/// </summary>
 		protected override void OnInitialized()
 		{
+			_layerProgress = new Dictionary<UnityTile, int>();
 			_layerBuilder = new Dictionary<string, List<LayerVisualizerBase>>();
 			_cachedData.Clear();
 
@@ -109,28 +112,23 @@
 		{
 			if (string.IsNullOrEmpty(MapId) || _properties.sourceOptions.isActive == false || (_properties.vectorSubLayers.Count + _properties.locationPrefabList.Count) == 0)
 			{
-				// Do nothing; 
-				Progress++;
-				Progress--;
+				
 			}
 			else
 			{
-				_registeredTiles.Enqueue(tile);
-				//tile.VectorDataState = TilePropertyState.Loading;
-				//Progress++;
-				//DataFetcher.FetchVector(tile.CanonicalTileId, MapId, tile, _properties.useOptimizedStyle, _properties.optimizedStyle);
+				_tilesToFetch.Enqueue(tile);
 			}
 		}
 
-		public override void MapUpdate()
+		protected override void OnMapUpdate()
 		{
-			if(_registeredTiles.Count > 0 && Progress < 10)
+			if(_tilesToFetch.Count > 0 && _tilesWaitingResponse.Count < 10)
 			{
-				for (int i = 0; i < Math.Min(_registeredTiles.Count, 5) ; i++)
+				for (int i = 0; i < Math.Min(_tilesToFetch.Count, 5) ; i++)
 				{
-					var tile = _registeredTiles.Dequeue();
+					var tile = _tilesToFetch.Dequeue();
 					tile.VectorDataState = TilePropertyState.Loading;
-					Progress++;
+					_tilesWaitingResponse.Add(tile);
 					DataFetcher.FetchVector(tile.CanonicalTileId, MapId, tile, _properties.useOptimizedStyle, _properties.optimizedStyle);
 				}
 			}
@@ -154,7 +152,6 @@
 			// clean up any pending request for this tile
 			if (_cachedData.ContainsKey(tile))
 			{
-				Progress--;
 				_cachedData.Remove(tile);
 			}
 			if (_layerBuilder != null)
@@ -174,7 +171,7 @@
 		#region DataFetcherEvents
 		private void OnVectorDataRecieved(UnityTile tile, VectorTile vectorTile)
 		{
-			Progress--;
+			_tilesWaitingResponse.Remove(tile);
 			if (_cachedData.ContainsKey(tile))
 			{
 				_cachedData[tile] = vectorTile;
@@ -201,7 +198,7 @@
 		{
 			if (tile != null)
 			{
-				Progress--;
+				_tilesWaitingResponse.Remove(tile);
 				tile.VectorDataState = TilePropertyState.Error;
 			}
 		}
@@ -243,7 +240,18 @@
 					{
 						if (builder.Active)
 						{
-							Progress++;
+							if(_layerProgress.ContainsKey(tile))
+							{
+								_layerProgress[tile]++;
+							}
+							else
+							{
+								_layerProgress.Add(tile, 1);
+								if(!_tilesWaitingProcessing.Contains(tile))
+								{
+									_tilesWaitingProcessing.Add(tile);
+								}
+							}
 							builder.Create(_cachedData[tile].Data.GetLayer(layerName), tile, DecreaseProgressCounter);
 						}
 					}
@@ -258,7 +266,18 @@
 				{
 					if (builder.Active)
 					{
-						Progress++;
+						if (_layerProgress.ContainsKey(tile))
+						{
+							_layerProgress[tile]++;
+						}
+						else
+						{
+							_layerProgress.Add(tile, 1);
+							if (!_tilesWaitingProcessing.Contains(tile))
+							{
+								_tilesWaitingProcessing.Add(tile);
+							}
+						}
 						//just pass the first available layer - we should create a static null layer for this
 						builder.Create(_cachedData[tile].Data.GetLayer(_cachedData[tile].Data.LayerNames()[0]), tile, DecreaseProgressCounter);
 					}
@@ -269,9 +288,14 @@
 			_cachedData.Remove(tile);
 		}
 
-		private void DecreaseProgressCounter()
+		private void DecreaseProgressCounter(UnityTile tile)
 		{
-			Progress--;
+			_layerProgress[tile]--;
+			if(_layerProgress[tile] == 0)
+			{
+				_layerProgress.Remove(tile);
+				_tilesWaitingProcessing.Remove(tile);
+			}
 		}
 	}
 }
